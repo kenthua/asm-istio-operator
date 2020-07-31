@@ -1,0 +1,41 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  name: test
+spec:
+  components:
+    ingressGateways:
+    - name: istio-ilb-ingressgateway
+      enabled: true
+      label:
+        istio: ilb-gateway
+      k8s:
+        serviceAnnotations:
+          cloud.google.com/load-balancer-type: "internal"
+        service:
+          type: LoadBalancer
+          loadBalancerIP: 10.0.0.1
+          ports:
+          - name: status-port
+            port: 15020
+          - name: http2
+            port: 80
+          - name: https
+            port: 443
+    - name: istio-x-gateway
+      enabled: true
+      label:
+        istio: x-gateway
+      k8s:
+        serviceAnnotations:
+          cloud.google.com/load-balancer-type: "internal"
+        service:
+          type: LoadBalancer
+          loadBalancerIP: 10.0.0.2
+          ports:
+          - name: status-port
+            port: 15020
+          - name: http2
+            port: 80
+          - name: https
+            port: 443

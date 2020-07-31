@@ -1,8 +1,15 @@
 # 
-- kpted `istio-operator.yaml` in resources
-- Environment overlay examples in `overleys/env1`
+- kpted / sed `istio-operator.yaml` in resources
 
-In `$WORK_DIR=overlays/env1`
+- Example 1 `defaults-in-overlays`
+
 ```
-kustomize build
+kustomize build defaults-in-overlays/overlays/env1
 ```
+
+- Example 1 `defaults-in-resources`
+
+```
+kustomize build defaults-in-resources/overlays/env1
+```
+

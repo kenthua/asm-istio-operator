@@ -1,0 +1,7 @@
+- op: add
+  path: /spec/components/ingressGateways/0/k8s/service/loadBalancerIP
+  value: 1.1.1.1
+
+- op: add
+  path: /spec/components/ingressGateways/1/k8s/service/loadBalancerIP
+  value: 2.2.2.2
