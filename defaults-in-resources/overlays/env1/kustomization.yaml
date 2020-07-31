@@ -6,4 +6,4 @@ resources:
 patches:
 - target:
     kind: IstioOperator
-  path: ips.yaml
+  path: ingressgateways-patch.yaml
