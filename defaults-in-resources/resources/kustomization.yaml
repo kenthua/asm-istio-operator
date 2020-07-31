@@ -5,6 +5,7 @@ resources:
 
 patches:
 - path: ingressgateways.yaml
+- path: egressgateways.yaml
 - target:
     kind: IstioOperator
   path: pilotenv.yaml
